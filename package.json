@@ -1,0 +1,45 @@
+{
+  "name": "dapphoot",
+  "version": "1.0.0",
+  "description": "dAppHoot es una dApp (aplicación descentralizada) de trivia interactiva diseñada para Web3. Los jugadores compiten respondiendo preguntas en tiempo real, ganan tokens ERC-20 (HootTokens) por respuestas correctas, y escalan en un leaderboard global.",
+  "homepage": "https://github.com/DanielaS-Tochi/dapphoot#readme",
+  "bugs": {
+    "url": "https://github.com/DanielaS-Tochi/dapphoot/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielaS-Tochi/dapphoot.git"
+  },
+  "keywords": [
+    "blockchain",
+    "web3",
+    "trivia",
+    "solidity",
+    "hardhat",
+    "chainlink",
+    "react",
+    "education",
+    "tokens",
+    "IA",
+    "arbitrum"
+  ],
+  "license": "MIT",
+  "author": "Daniela Silvana Tochi",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile",
+    "deploy": "npx hardhat run scripts/deploy.ts --network arbitrumSepolia"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox-viem": "^3.0.0",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@openzeppelin/contracts": "^5.3.0",
+    "dotenv": "^16.5.0",
+    "ethers": "^5.8.0",
+    "hardhat": "^2.23.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
