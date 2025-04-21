@@ -2,7 +2,6 @@ import { createWalletClient, http, getContract } from 'viem';
 import { waitForTransactionReceipt } from 'viem/actions';
 import { foundry } from 'viem/chains';
 import { expect } from 'chai';
-import { decodeEventLog } from 'viem';
 import HootTokenArtifact from '../artifacts/contracts/HootToken.sol/HootToken.json';
 
 const LOCAL_URL = "http://127.0.0.1:8545";

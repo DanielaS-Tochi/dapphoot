@@ -24,6 +24,7 @@ contract dAppHoot is AccessControl {
     event QuestionCreated(uint256 indexed id, string question, string[] options, uint256 reward);
     event AnswerSubmitted(address indexed player, uint256 indexed questionId, bool correct, uint256 reward);
     event LeaderboardUpdated(address indexed player, uint256 newScore);
+    event DebugHash(bytes32 expected, bytes32 provided); // Para depuración
 
     constructor(address _hootToken, address admin) {
         hootToken = HootToken(_hootToken);
@@ -41,13 +42,14 @@ contract dAppHoot is AccessControl {
         emit QuestionCreated(questionCount, _question, _options, _reward);
         questionCount++;
     }
-
+    
     function submitAnswer(uint256 questionId, string memory answer, string memory salt) public {
         Question storage q = questions[questionId];
         require(q.isActive, "Inactive question");
         require(q.reward > 0, "No reward");
 
         bytes32 hash = keccak256(abi.encodePacked(answer, salt));
+        emit DebugHash(q.answerHash, hash); // Emite ambos hashes para comparar en los tests
         bool correct = (hash == q.answerHash);
 
         if (correct) {
